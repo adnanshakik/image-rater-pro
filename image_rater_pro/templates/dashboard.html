@@ -1,0 +1,11 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="c"></canvas>
+<script>
+let data={{data|tojson}};
+let labels=data.map(x=>x[0]);
+let vals=data.map(x=>x[1]);
+new Chart(document.getElementById('c'),{
+type:'bar',
+data:{labels:labels,datasets:[{label:'Ratings',data:vals}]}
+});
+</script>

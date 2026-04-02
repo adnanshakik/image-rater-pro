@@ -1,0 +1,14 @@
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>img{width:100%;max-width:300px}</style>
+{% for i in images %}
+<div>
+<img src="/static/images/{{i}}">
+<button onclick="r('{{i}}',5)">⭐</button>
+</div>
+{% endfor %}
+<script>
+function r(i,v){
+fetch('/submit',{method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({image:i,rating:v})})
+}
+</script>
